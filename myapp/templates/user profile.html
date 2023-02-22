@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <style>
+    #nav {
+      background-color: #4041ad;
+      #background-image: url({% static 'Welcome back.jpg' %});
+      padding: 15px;
+      margin: 0%;
+    }
+
+    #icon {
+      padding-top: 8px;
+      margin-right: 1200px;
+    }
+
+    #home {
+      color: white;
+    }
+
+    #contactus {
+      color: white;
+    }
+
+    #navbarDropdown {
+      color: white;
+    }
+
+    #aboutcompany {
+      color: white;
+      padding: 100px;
+      text-align: center;
+    }
+
+    #editprofile {
+      color: white;
+    }
+
+    #logout {
+      color: white;
+    }
+
+    body {
+      background-color: #4041ad;
+    }
+
+    #welcomeimg {
+      height: 400px;
+      width: 800px;
+      margin-top: 130px;
+      margin-left: 100px;
+    }
+
+    #a {
+      float: left;
+    }
+
+    #c {
+      background-color: #4041ad;
+      #background-image:url({% static 'flower.jpg' %});
+      background-size:400px;
+      background-attachment: fixed;
+      height: 400px;
+      width: 500px;
+      margin-top: 130px;
+      margin-right: 100px;
+      padding: 25px;
+      padding-top: 110px;
+      border: 2px inset black;
+      text-align: center;
+      /* border-radius: 25px 50px; */
+      /* border-radius: 25px 50px 75px; */
+      /* border-radius: 25px 50px 75px 100px; */
+      /* border-radius:50px; for getter same curve in all the corners */
+      /* border-style:dotted;
+        border-width: 10px;
+        border-color:darkblue; */
+      float: right;
+    }
+    #addproducts{
+      color:white;
+    }
+    #viewallproducts{
+      color:white;
+    }
+    #viewpostedproducts{
+      color:white;
+    }
+    #offcanvas{
+        background-color: #4041ad;
+        #background-image: url({% static 'Welcome back.jpg' %});
+    }
+  </style>
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/ab4495b31a.js"></script>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+  <script crossorigin="anonymous" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid" id="nav">
+      <img src="{% static 'flikart transparent icon.png' %}" width="30px" height="30px">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/myapp/intex/"
+              id="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="contactus">Contact Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" id="offcanvas"
+            aria-controls="offcanvasRight"><i class="fa-solid fa-bars"></i></button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Welcome {{username}}</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-primary" type="button">Edit Profile</button>
+                <button class="btn btn-outline-primary" type="button">Logout</button>
+              </div><br>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <img src="{% static 'flipkart user profile icon.jpg' %}" id="welcomeimg">
+    <div id="c">
+      <div class="d-grid gap-2">
+        <button class="btn btn-outline-success" type="button"><a href="http://127.0.0.1:8000/myapp/filedisplayuser/" id="addproducts">View products</a></button>
+        <button class="btn btn-outline-success" type="button" ><a href="http://127.0.0.1:8000/myapp/wishlistdisplay/" id="viewallproducts">wishlist</a></button>
+        <button class="btn btn-outline-success" type="button" ><a href="http://127.0.0.1:8000/myapp/cartdisplay/" id="viewpostedproducts">Cart</a></button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>
+
+

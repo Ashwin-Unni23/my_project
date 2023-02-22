@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <style>
+    #nav {
+      /* background-color:#004526; */
+      /* background-color: #043927; */
+      /* background-color: #014421; */
+      background-image: url({% static 'filkart seller icon 1.png' %});
+      padding: 15px;
+      margin: 0%;
+    }
+
+    #icon {
+      padding-top: 8px;
+      margin-right: 1200px;
+    }
+
+    #home {
+      color: white;
+    }
+
+    #contactus {
+      color: white;
+    }
+
+    #navbarDropdown {
+      color: white;
+    }
+
+    #aboutcompany {
+      color: white;
+      padding: 100px;
+      text-align: center;
+    }
+
+    #editprofile {
+      color: white;
+    }
+
+    #logout {
+      color: white;
+    }
+
+    body {
+      background-color: #014421;
+    }
+
+    #sellericon {
+      height: 430px;
+      width: 800px;
+      margin-top: 130px;
+      margin-left: 100px;
+    }
+
+    #a {
+      float: left;
+    }
+
+    #c {
+      color: white;
+      /* background-color:black; */
+      background-image: url({% static 'filkart seller icon 1.png' %});
+      background-size: 1200px;
+      background-attachment: fixed;
+      height: 430px;
+      width: 500px;
+      margin-top: 110px;
+      margin-right: 100px;
+      padding: 25px;
+      /* padding-top: 110px; */
+      border: 2px inset black;
+      text-align:left;
+      /* border-radius: 25px 50px; */
+      /* border-radius: 25px 50px 75px; */
+      /* border-radius: 25px 50px 75px 100px; */
+      /* border-radius:50px; for getter same curve in all the corners */
+      /* border-style:dotted;
+        border-width: 10px;
+        border-color:darkblue; */
+      float: right;
+    }
+
+    #addproducts {
+      color: white;
+    }
+
+    #viewallproducts {
+      color: white;
+    }
+
+    #viewpostedproducts {
+      color: white;
+    }
+
+    #offcanvas {
+      background-color: #014421;
+    }
+  </style>
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/ab4495b31a.js"></script>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+  <script crossorigin="anonymous" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid" id="nav">
+      <img src="{% static 'flikart transparent icon.png' %}" width="30px" height="30px">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/flipkart/intex.html"
+              id="home">Home</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            id="offcanvas" aria-controls="offcanvasRight"><i class="fa-solid fa-bars"></i></button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel"></h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-primary" type="button">Seller Support</button>
+                <button class="btn btn-outline-primary" type="button">Help</button>
+              </div><br>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div>
+    <img src="{% static 'filkart seller icon 1.png' %}" id="sellericon" style="margin-top: 110px;">
+    <div id="c">
+      <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            <div>
+              <label for="exampleFormControlInput1" class="form-label">PRODUCT NAME</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" name="pname">
+            </div>
+            <div>
+              <label for="exampleFormControlTextarea1" class="form-label" style="margin-bottom: 10px;">PRODUCT PRIZE</label>
+              <input type="number" class="form-control" id="exampleFormControlInput1" name="pprize">
+              <label for="exampleFormControlTextarea1" class="form-label" style="margin: 10px;">DESCRIPTION</label>
+              <input type="text" class="form-control" id="exampleFormControlInput2" name="pdes">
+              <label for="exampleFormControlTextarea1" class="form-label" style="margin: 10px;">PRODUCT IMAGE</label>
+              <input type="file" class="form-control" id="exampleFormControlInput3" name="pimage">
+              <input type="checkbox" id="check">
+              <label for="check" style="margin-top: 20px;">Confirm</label>
+              <button class="btn btn-primary" type="submit"
+                style="margin-left: 280px; margin-top: 20px; background-color: rgb(80, 80, 221); color: white;"
+                id="b">UPLOAD</button>
+            </div>
+          </div>
+    </div>
+    </form>
+</body>
+
+
+
+</html>
